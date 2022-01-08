@@ -1,6 +1,6 @@
 {
-  "name": "nodejs-mysql",
-  "version": "1.2.5",
+  "name": "nodejs-mysqli",
+  "version": "1.2.6",
   "description": "Mysql api for nodejs",
   "main": "index.js",
   "repository": {
