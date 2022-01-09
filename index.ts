@@ -1,5 +1,6 @@
 import { type } from "os";
 import db_conn from "./lib/connection";
+import deleteData from "./lib/delete_data";
 import getData from "./lib/get_data";
 import insertData from "./lib/insert_data";
 import updateData from "./lib/update_data";
@@ -22,6 +23,7 @@ class Connection {
   get = (table: string) => getData({ connection: this.connection, table });
   set = (table: string, data: object) => insertData({ connection: this.connection, data, table });
   update = (table: string, data: object, id: string) => updateData({ connection: this.connection, data, table, id });
+  delete = (table: string,  id: string) => deleteData({ connection: this.connection, table, id });
 };
 
 const nodesql = Connection;
