@@ -2,6 +2,7 @@ const connection = require("./lib/connection");
 const deleteData = require("./lib/delete_data");
 const insertData = require("./lib/insert_data");
 const updateData = require("./lib/update_data");
+const custom = require("./lib/v2.0/custom");
 const getMethod = require("./lib/v2.0/get_method");
 
 class Connection {
@@ -13,5 +14,6 @@ class Connection {
   set = (table, data) => insertData({ connection: this.#connection, data, table });
   update = (table, data, id) => updateData({ connection: this.#connection, data, table, id });
   delete = (table, id) => deleteData({ connection: this.#connection, table, id });
+  custom = (query) => custom({ connection: this.#connection, query });
 };
 module.exports = Connection;
